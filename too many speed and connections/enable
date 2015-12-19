@@ -1,0 +1,3 @@
+/ip firewall filter enable "too many tcp"
+/ip firewall filter enable "too many udp"
+/queue simple enable "too many speed"
