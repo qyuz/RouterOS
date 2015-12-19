@@ -4,7 +4,7 @@
 /queue type remove "too many speed one upload"
 /queue simple remove "too many speed"
 
-/ip firewall filter add action=drop chain=forward comment="too many tcp" connection-limit=50,32 protocol=tcp disabled=yes tcp-flags=syn
+/ip firewall filter add action=drop chain=forward comment="too many tcp" connection-limit=75,32 protocol=tcp disabled=yes tcp-flags=syn
 /ip firewall filter add action=drop chain=forward comment="too many udp" connection-limit=75,32 protocol=udp disabled=yes
 /queue type add kind=pcq name="too many speed one download" pcq-classifier=dst-address pcq-dst-address6-mask=64 pcq-rate=3M pcq-src-address6-mask=64 
 /queue type add kind=pcq name="too many speed one upload" pcq-classifier=src-address pcq-dst-address6-mask=64 pcq-rate=3M pcq-src-address6-mask=64 
